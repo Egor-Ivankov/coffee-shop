@@ -1,12 +1,11 @@
 import React from 'react';
 import logo from '../../../../assets/logo/logo.png';
-import { FiShoppingCart } from 'react-icons/fi'
+import { FiShoppingCart } from 'react-icons/fi';
 import './navBar.scss';
 
 const NavBar = () => {
     return (
-        <nav>
-            <div className='top-nav-bar'>
+        <nav className='top-nav-bar'>
                 <img className='top-nav-bar-logo' src={logo} alt="logo"/>
                 <ul className='top-nav-bar-list'>
                     <li className='top-nav-bar-list-item'>Home</li>
@@ -19,9 +18,12 @@ const NavBar = () => {
                         <FiShoppingCart className='top-nav-bar-list-item-icon' />
                     </li>
                 </ul>
-            </div>
         </nav>
     );
 }
 
 export default NavBar;
+
+
+
+
