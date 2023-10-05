@@ -1,7 +1,7 @@
 import React from 'react';
-import coffeeBag from '../../../../assets/img/coffee-bag.png';
-import lines from '../../../../assets/img/lines.png';
-import coffeeKernels from '../../../../assets/img/coffee-kernels.png'
+import coffeeBag from '@assets/img/coffee-bag.png';
+import lines from '@assets/img/lines.png';
+import coffeeKernels from '@assets/img/coffee-kernels.png'
 import './coffeeBagSection.scss';
 
 const CoffeeBagSection = () => {
