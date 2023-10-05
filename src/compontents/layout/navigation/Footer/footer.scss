@@ -1,0 +1,38 @@
+.main-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 100px 10px 100px;
+    align-items: center;
+    border-top: 1px outset rgba(0, 0, 0, 0.2);
+
+    &-copyrights {
+        width: 50%;
+
+        p {
+            font-size: small;
+            opacity: 0.6;
+        }
+    }
+
+    &-payments {
+        width: 20%;
+
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            
+            li {
+                display: flex;
+                align-items: center;
+            }
+            
+            svg {
+                opacity: 0.6;
+                width: 20px;
+                height: auto;
+            }
+        }
+    }
+}
