@@ -26,11 +26,20 @@
             transition: border-bottom .4s ease-out;
 
             &-icon {
-                width: 35px;
+                transform: translateY(8px);
+                margin-left: 10px;
+                width: 25px;
+                height: 25px;
             }
+
+            &-icon:hover {
+                transition: opacity 0.1s ease-out;
+                opacity: 0.6;
+            }
+
         }
 
-        &-item::before {
+        &-item:not(:last-child)::before {
             content: '';
             position: absolute;
             left: 0; 
