@@ -5,8 +5,7 @@ import './navBar.scss';
 
 const NavBar = () => {
     return (
-        <nav>
-            <div className='top-nav-bar'>
+        <nav className='top-nav-bar'>
                 <img className='top-nav-bar-logo' src={logo} alt="logo"/>
                 <ul className='top-nav-bar-list'>
                     <li className='top-nav-bar-list-item'>Home</li>
@@ -17,11 +16,10 @@ const NavBar = () => {
                     <li className='top-nav-bar-list-item'>Login</li>
                     <li className='top-nav-bar-list-item'>
                         <FiShoppingCart 
-                            className='top-nav-bar-list-item-icon'
+                            className='top-nav-bar-list-item-icon'  
                         />
                     </li>
                 </ul>
-            </div>
         </nav>
     );
 }
