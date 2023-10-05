@@ -21,7 +21,7 @@ const NavBar = () => {
                         src={shoppingCartIcon} alt="shopping-cart-icon" 
                         />
                     </li>
-                    {/* some changes */}
+                    {/* edit some changes */}
                 </ul>
             </div>
         </nav>
