@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../../../assets/logo/logo.png';
-import { FiShoppingCart } from 'react-icons/fi'
+import { FiShoppingCart } from 'react-icons/fi';
 import './navBar.scss';
 
 const NavBar = () => {
@@ -17,7 +17,7 @@ const NavBar = () => {
                     <li className='top-nav-bar-list-item'>Login</li>
                     <li className='top-nav-bar-list-item'>
                         <FiShoppingCart 
-                        className='top-nav-bar-list-item-icon'
+                            className='top-nav-bar-list-item-icon'
                         />
                     </li>
                 </ul>

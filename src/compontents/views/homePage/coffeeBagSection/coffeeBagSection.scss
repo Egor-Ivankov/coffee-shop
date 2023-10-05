@@ -1,0 +1,26 @@
+.coffee-bag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7b3f3f36;
+    width: 100%;
+    height: 500px;
+    padding-inline: 400px;
+
+
+    &-image {
+        width: 350px;
+        height: 475px;
+    }
+
+    &-par:first-child {
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    &-par:last-child {
+        font-size: 50px;
+        font-weight: 600;
+    }
+}
