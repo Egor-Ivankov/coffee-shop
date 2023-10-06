@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import "./footerSection.scss";
+import footerRope from '@assets/img/rope.png';
+import teaBag from '@assets/img/tea-bag.png';
+import coffeeCup from '@assets/img/coffee-cup.png';
+import { FaFacebookF, FaTwitter, FaWhatsapp, FaYoutube, FaInstagram } from 'react-icons/fa'
 
 const FooterSection = () => {
   return (
     <section className='footer-section'>
-        <img className='footer-section-rope' alt='rope'/>
-        <img className='footer-section-rope-tea-bag' alt='tea-bag'/>
+        <img src={footerRope} className='footer-section-rope' alt='rope'/>
+        <img src={teaBag} className='footer-section-rope-tea-bag' alt='tea-bag'/>
         <div className='footer-section-block'>
             <div className='footer-section-block-info'>
                 <div className='footer-section-block-info-locate'>
@@ -28,24 +33,24 @@ const FooterSection = () => {
                 <div className='footer-section-block-info-get-connected'>
                     <h3 className='footer-section-block-info-get-connected-h3'>GET CONNECTED</h3>
                     <ul className='footer-section-block-info-get-connected-list'>
-                        <li className='footer-section-block-info-get-connected-list-link'>FB</li>
-                        <li className='footer-section-block-info-get-connected-list-link'>TW</li>
-                        <li className='footer-section-block-info-get-connected-list-link'>WS</li>
-                        <li className='footer-section-block-info-get-connected-list-link'>YT</li>
-                        <li className='footer-section-block-info-get-connected-list-link'>INST</li>
+                        <li className='footer-section-block-info-get-connected-list-link'><FaFacebookF /></li>
+                        <li className='footer-section-block-info-get-connected-list-link'><FaTwitter /></li>
+                        <li className='footer-section-block-info-get-connected-list-link'><FaWhatsapp /></li>
+                        <li className='footer-section-block-info-get-connected-list-link'><FaYoutube /></li>
+                        <li className='footer-section-block-info-get-connected-list-link'><FaInstagram /></li>
                     </ul>
                 </div>
 
                 <div className='footer-section-block-info-customer-services'>
-                <h3 className='footer-section-block-info-customer-services-h3'>OUR TERMS</h3>
-                    <p className='footer-section-block-info-customer-services-link'>Terms Of Service</p>
-                    <p className='footer-section-block-info-customer-services-link'>Refund & Cancellation</p>
-                    <p className='footer-section-block-info-customer-services-link'>Privacy Policy</p>
-                    <p className='footer-section-block-info-customer-services-link'>Delivery Information</p>
+                <h3 className='footer-section-block-info-customer-services-h3'>CUSTOMER SERVICES</h3>
+                    <p className='footer-section-block-info-customer-services-link'>Enquiry</p>
+                    <p className='footer-section-block-info-customer-services-link'>Returns</p>
+                    <p className='footer-section-block-info-customer-services-link'>About Us</p>
+                    <p className='footer-section-block-info-customer-services-link'>My Account</p>
                 </div>
             </div>
 
-            <img className='footer-section-block-coffee-cup' alt="coffee-cup" />
+            <img src={coffeeCup} className='footer-section-block-coffee-cup' alt="coffee-cup" />
         </div>
     </section>
   )

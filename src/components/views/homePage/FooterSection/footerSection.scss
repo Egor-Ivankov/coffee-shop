@@ -1,4 +1,93 @@
 .footer-section {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 5% 0 5% 0;
+    position: relative;
+    font-size: large;
+
+    &-rope {
+        width: 70%;
+        height: auto;
+        margin: 0 auto 0 auto;
+        &-tea-bag {
+            width: 100px;
+            right: 540px;
+            top: 200px;
+            position: absolute;
+        }
+    }
+
+    &-block {
+        display: flex;
+
+        padding: 0 20% 0 20%;
+        &-info {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+
+            h3 {
+                font-weight: bolder;
+                margin-bottom: 10px;
+            }
+
+            &-locate {
+                width: 50%;
+            }
+
+            &-our-terms {
+                width: 50%;
+            }
+
+            &-get-connected {
+                width: 50%;
+                
+                &-list {
+                    display: flex;
+                    list-style: none;
+
+                    &-link {
+                        display: flex;
+                        align-items: center;
+                        border: 1px outset black;
+                        border-radius: 100%;
+                        padding: 5px;
+                        cursor: pointer;
+
+                        svg {
+                            width: 15px;
+                            height: auto;
+                        }
+                    }
+
+                    &-link:not(:first-child) {
+                        margin-left: 5px;
+                    }
+
+                    &-link:hover {
+                        transition: background-color 0.4s ease;
+                        background-color: black;
+                        svg {
+                            transition: color 0.4s ease;
+                            width: 15px;
+                            height: auto;
+                            color: white;
+                        }
+                    }
+                }
+
+            }
+
+            &-customer-services {
+                width: 50%;
+
+            }
+        }
+
+        &-coffee-cup {
+        }
+
+    }
+
 }
