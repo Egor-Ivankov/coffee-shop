@@ -27,6 +27,24 @@
 
             &-locate {
                 width: 50%;
+                font-family: 'Inria Sans', sans-serif;
+                letter-spacing: 1px;
+                font-size: 18px;
+
+                &-p {
+                    font-family: 'Inria Sans', sans-serif;
+                    font-weight: 200;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+
+                &-h3 {
+                    @extend .footer-section-block-info-get-connected-h3;
+                }
+
+                &-link {
+                    @extend .footer-section-block-info-locate-p;
+                }
             }
 
             &-our-terms {
@@ -35,10 +53,17 @@
 
             &-get-connected {
                 width: 50%;
+
+                &-h3 {
+                    font-family: 'Inria Sans', sans-serif;
+                    letter-spacing: 1px;
+                    font-size: 20px;
+                }
                 
                 &-list {
                     display: flex;
                     list-style: none;
+                    margin-top: 15px;
 
                     &-link {
                         display: flex;
@@ -74,7 +99,14 @@
 
             &-customer-services {
                 width: 50%;
+                
+                &-h3 {
+                    @extend .footer-section-block-info-get-connected-h3;
+                }
 
+                &-link {
+                    @extend .footer-section-block-info-locate-p;
+                }
             }
         }
 
