@@ -3,19 +3,12 @@
     flex-direction: column;
     width: 100%;
     padding: 5% 0 5% 0;
-    position: relative;
     font-size: large;
 
     &-rope {
         width: 70%;
         height: auto;
         margin: 0 auto 0 auto;
-        &-tea-bag {
-            width: 100px;
-            right: 540px;
-            top: 200px;
-            position: absolute;
-        }
     }
 
     &-block {
@@ -85,7 +78,19 @@
             }
         }
 
-        &-coffee-cup {
+        &-coffee-tea {
+            position: relative;
+
+            &-coffee-cup {
+                width: 300px;
+            }
+
+            &-tea-bag {
+                width: 100px;
+                right: 130px;
+                bottom: 300px;
+                position: absolute;
+            }
         }
 
     }

@@ -9,7 +9,6 @@ const FooterSection = () => {
   return (
     <section className='footer-section'>
         <img src={footerRope} className='footer-section-rope' alt='rope'/>
-        <img src={teaBag} className='footer-section-rope-tea-bag' alt='tea-bag'/>
         <div className='footer-section-block'>
             <div className='footer-section-block-info'>
                 <div className='footer-section-block-info-locate'>
@@ -49,8 +48,10 @@ const FooterSection = () => {
                     <p className='footer-section-block-info-customer-services-link'>My Account</p>
                 </div>
             </div>
-
-            <img src={coffeeCup} className='footer-section-block-coffee-cup' alt="coffee-cup" />
+            <div className='footer-section-block-coffee-tea'>
+            <img src={coffeeCup} className='footer-section-block-coffee-tea-coffee-cup' alt="coffee-cup" />
+            <img src={teaBag} className='footer-section-block-coffee-tea-tea-bag' alt='tea-bag'/>
+            </div>
         </div>
     </section>
   )
