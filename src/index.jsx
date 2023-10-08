@@ -6,12 +6,14 @@ import { Footer } from '@components/layout'
 import CoffeeBagSection from '@components/views/homePage/coffeeBagSection/CoffeeBagSection';
 import FooterSection from '@components/views/homePage/FooterSection/FooterSection';
 import BenefitsSection from '@components/views/homePage/BenefitsSection/BenefitsSection';
+import CupCoffeeSection from '@components/views/homePage/CupCoffeeSection/CupCoffeeSection';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <NavBar/>
     <CoffeeBagSection/>
     <BenefitsSection/>
+    <CupCoffeeSection/>
     <FooterSection />
     <Footer />
   </React.StrictMode>

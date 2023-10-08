@@ -1,0 +1,34 @@
+.cup-coffee-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3%;
+
+    &-cup {
+        margin-right: 12%;
+        width: 550px;
+    }
+    
+    &-container {   
+        width: 30%;
+        text-align: center;
+        margin-top: 8%;
+
+        &-commas {
+            width: 170px;
+        }
+
+        &-quotation {
+            margin: 4% 0;
+            line-height: 1.1;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        &-author {
+            @extend .cup-coffee-section-container-quotation;
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+}
