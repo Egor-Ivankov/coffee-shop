@@ -1,0 +1,29 @@
+.video-section {
+    width: 100%;
+    margin: 12% 0 6% 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &-item {
+        border-radius: 50px;
+    }
+
+    &-img {
+        position: absolute;
+        top: -190%;
+        width: 75%;
+        z-index: -1;
+    }
+}
+
+.video-section::before {
+    content: "";
+    width: 15%;
+    height: 480px;
+    position: absolute;
+    top: -28%;
+    background-color: #0ac2076f;
+    border-radius: 400px;
+    z-index: -1;
+}
