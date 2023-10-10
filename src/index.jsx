@@ -8,6 +8,7 @@ import FooterSection from '@components/views/homePage/FooterSection/FooterSectio
 import BenefitsSection from '@components/views/homePage/BenefitsSection/BenefitsSection';
 import CupCoffeeSection from '@components/views/homePage/CupCoffeeSection/CupCoffeeSection';
 import VideoSection from '@components/views/homePage/VideoSection/VideoSection';
+import HowToSleep from './components/views/homePage/HowToSleepSection/HowToSleep';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BenefitsSection/>
     <CupCoffeeSection/>
     <VideoSection/>
+    <HowToSleep/>
     <FooterSection />
     <Footer />
   </React.StrictMode>
