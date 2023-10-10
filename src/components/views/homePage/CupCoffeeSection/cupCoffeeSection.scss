@@ -6,7 +6,6 @@
 
     &-cup {
         margin-right: 12%;
-        width: 550px;
     }
     
     &-container {   
@@ -15,20 +14,20 @@
         margin-top: 8%;
 
         &-commas {
-            width: 170px;
+            width: 190px;
         }
 
         &-quotation {
             margin: 4% 0;
             line-height: 1.1;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 20px;
         }
 
         &-author {
             @extend .cup-coffee-section-container-quotation;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 22px;
         }
     }
 }
