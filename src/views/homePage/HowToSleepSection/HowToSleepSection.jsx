@@ -1,8 +1,8 @@
 import React from 'react';
 import lines from '@assets/img/lines.png';
-import './howToSleep.scss';
+import './howToSleepSection.scss';
 
-const HowToSleep = () => {
+const HowToSleepSection = () => {
     return (
         <section className='how-to-sleep'>
             <div className="how-to-sleep-container">
@@ -19,4 +19,4 @@ const HowToSleep = () => {
     );
 }
 
-export default HowToSleep;
+export default HowToSleepSection;

@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom/client'
 import '@components/styles/index.scss';
 import { NavBar } from '@components/layout';
 import { Footer } from '@components/layout'
-import CoffeeBagSection from '@components/views/homePage/СoffeeBagSection/CoffeeBagSection';
-import FooterSection from '@components/views/homePage/FooterSection/FooterSection';
-import BenefitsSection from '@components/views/homePage/BenefitsSection/BenefitsSection';
-import CupCoffeeSection from '@components/views/homePage/CupCoffeeSection/CupCoffeeSection';
-import VideoSection from '@components/views/homePage/VideoSection/VideoSection';
-import HowToSleep from './components/views/homePage/HowToSleepSection/HowToSleep';
+import { CoffeeBagSection } from './views/homePage';
+import { FooterSection } from './views/homePage';
+import { BenefitsSection } from './views/homePage';
+import { CupCoffeeSection } from './views/homePage';
+import { VideoSection } from './views/homePage';
+import { HowToSleepSection } from './views/homePage';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <NavBar/>
-    <CoffeeBagSection/>
-    <BenefitsSection/>
-    <CupCoffeeSection/>
-    <VideoSection/>
-    <HowToSleep/>
+    <CoffeeBagSection />
+    <BenefitsSection />
+    <CupCoffeeSection />
+    <VideoSection />
+    <HowToSleepSection />
     <FooterSection />
     <Footer />
   </React.StrictMode>

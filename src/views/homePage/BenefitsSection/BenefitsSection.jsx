@@ -5,7 +5,7 @@ import planet from '@assets/img/eco-planet.png';
 import usa from '@assets/img/made-in-usa.png';
 import './benefitsSection.scss';
 
-export default function BenefitsSection() {
+const BenefitsSection = () => {
     return (
         <section className='benefits-section'>
             <div className='benefits-section-origin'>
@@ -51,3 +51,5 @@ export default function BenefitsSection() {
         </section>
     )
 }
+
+export default BenefitsSection;
