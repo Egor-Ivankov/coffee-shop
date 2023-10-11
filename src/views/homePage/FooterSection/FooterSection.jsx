@@ -13,9 +13,9 @@ const FooterSection = () => {
                 <div className='footer-section-block-info'>
                     <div className='footer-section-block-info-locate'>
                         <h3 className='footer-section-block-info-locate-h3'>LOCATE</h3>
-                        <p className='footer-section-block-info-locate-p'>Warehouse 12, Street 6A</p>
-                        <p className='footer-section-block-info-locate-p'>Behind Times Square Center,</p>
-                        <p className='footer-section-block-info-locate-p'>Phase 1 AI Quoz, Dubai, UAE</p>
+                        <p className='footer-section-block-info-locate-p'>Warehouse 12, Street 6A
+                        <br /> Behind Times Square Center,
+                        <br /> Phase 1 AI Quoz, Dubai, UAE</p>
                         <br />
                         <p className='footer-section-block-info-locate-p'>+971 55 900 0448</p>
                         <p className='footer-section-block-info-locate-p'>info@suncoffee.com</p>
