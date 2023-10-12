@@ -12,13 +12,11 @@ const VideoSection = () => {
                     height="315" 
                     src="https://www.youtube.com/embed/ezMaCrzWkAs?si=l6Ms6PdjCJTpCILm" 
                     title="Coffee advertising" 
-                    frameborder="0" 
                     allow="accelerometer;   
                     autoplay; clipboard-write; 
                     encrypted-media; 
                     picture-in-picture; 
-                    web-share" 
-                    allowfullscreen>
+                    web-share">
                 </iframe>
         </section>
     );
