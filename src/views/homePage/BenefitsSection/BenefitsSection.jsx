@@ -7,7 +7,7 @@ import './benefitsSection.scss';
 
 const BenefitsSection = () => {
     return (
-        <section className='benefits-section'>
+        <section id='benefitsSection' className='benefits-section'>
             <div className='benefits-section-origin'>
                 <h2 className='benefits-section-origin-h2'>100% single <br/> origin <br/> specialty <br/> coffee <br/> </h2>
                 <img src={lines} alt="lines" />
