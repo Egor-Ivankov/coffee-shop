@@ -1,0 +1,24 @@
+.slider-section {
+    text-align: center;
+    position: relative;
+
+    &-buttons {
+
+        &-left {
+        }
+        &-right {
+
+        }
+    }
+}
+.slider-section::before {
+    content: "";
+    width: 15%;
+    height: 500px;
+    position: absolute;
+    left: 42%;
+    top: -5%;
+    background-color: #f376297d;
+    border-radius: 400px;
+    z-index: -1;
+}
