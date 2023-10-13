@@ -42,11 +42,11 @@
         }
     
         &-stepped {
-    
             &-kernels {
                 width: 200px;
             }
-            &-par{
+
+            &-par {
                 font-size: 40px;
                 font-weight: 700;
                 line-height: .9;
@@ -73,15 +73,6 @@
         cursor: pointer;
 
         &-arrow {
-            @keyframes slidein {
-                from {
-                    transform: translateY(0px);
-                }
-              
-                to {
-                    transform: translateY(8px);
-                }
-              }
             animation-duration: 2s;
             animation-name: slidein;
             animation-iteration-count: infinite;
@@ -89,6 +80,16 @@
             margin-top: 35%;
             width: 25px;
             height: 25px;
+
+            @keyframes slidein {
+                from {
+                    transform: translateY(0px);
+                }
+            
+                to {
+                    transform: translateY(8px);
+                }
+            }
         }
 
         &-dot {
