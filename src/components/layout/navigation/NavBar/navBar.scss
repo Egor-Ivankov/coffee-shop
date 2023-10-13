@@ -17,6 +17,11 @@
         width: 40%;
         margin-right: 10%;
         
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
         &-item {
             position: relative;
             text-transform: uppercase;
@@ -36,7 +41,6 @@
                 transition: opacity 0.1s ease-out;
                 opacity: 0.6;
             }
-
         }
 
         &-item:not(:last-child)::before {

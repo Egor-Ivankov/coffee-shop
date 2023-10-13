@@ -1,30 +1,50 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import '@components/styles/index.scss';
-import { NavBar } from '@components/layout';
-import { Footer } from '@components/layout'
+import {
+	createBrowserRouter,
+	RouterProvider,
+} from "react-router-dom";
 import { 
-	CoffeeBagSection, 
-	BenefitsSection, 
-	CupCoffeeSection, 
-	VideoSection, 
-	HowToSleepSection, 
-	SliderSection,
-	NewsletterSection, 
-	FooterSection 
-} from './views/homePage';
+	AboutUs,
+	BecomeAPartner,
+	Enquiry,
+	Home,
+	Login,
+	Products
+} from './routes';
+
+const router = createBrowserRouter([
+	{
+	  path: "/",
+	  element: <Home />,
+	},
+	{
+	  path: "/aboutUs",
+	  element: <AboutUs />,
+	},
+	{
+	  path: "/products",
+	  element: <Products />,
+	},
+	{
+	  path: "/becomeAPartner",
+	  element: <BecomeAPartner />,
+	},
+	{
+	  path: "/enquiry",
+	  element: <Enquiry />,
+	},
+	{
+	  path: "/login",
+	  element: <Login />,
+	},
+	
+]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<NavBar/>
-		<CoffeeBagSection />
-		<BenefitsSection />
-		<CupCoffeeSection />
-		<VideoSection />
-		<HowToSleepSection />
-		<SliderSection/>
-		<NewsletterSection />
-		<FooterSection />
-		<Footer />
+		<RouterProvider router={router} />
 	</React.StrictMode>
 )
