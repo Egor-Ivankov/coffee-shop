@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from '@utils/axios'
+import axios from '@utils/axios.js'
 
 const initialState = {
     user: null,
@@ -8,9 +8,9 @@ const initialState = {
     isLoading: false
 }
 
-export const loginThunk = createAsyncThunk('auth/loginUser', async () => {
+export const loginThunk = createAsyncThunk('auth/loginUser', async ({username, password}) => {
     try {
-        const { data } = await axios.post('/auth/login', { email, password })
+        const { data } = await axios.post('/auth/login', { username, password })
 
         if (data.token) {
             window.localStorage.setItem('token', data.token);
@@ -21,12 +21,30 @@ export const loginThunk = createAsyncThunk('auth/loginUser', async () => {
     }
 })
 
+export const getUser = createAsyncThunk('auth/getUser', async () => {
+    try {
+        const { data } = await axios.get('auth/me')
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        logout: (state) => {
+            state.isLoading = false;
+            state.user = null;
+            state.token = null;
+            state.status = null;
+        }
+    },
     extraReducers: (builder) => {
         builder
+
+        // Login user
         .addCase(loginThunk.pending, (state) => {
             state.isLoading = true;
             state.status = null;
@@ -38,6 +56,21 @@ export const authSlice = createSlice({
             state.token = action.payload.token;
         })
         .addCase(loginThunk.rejected, (state, action) => {
+            state.isLoading = false;
+            state.status = action.payload.message;
+        })
+
+        .addCase(getUser.pending, (state) => {
+            state.isLoading = true;
+            state.status = null;
+        })
+        .addCase(getUser.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.status = action.payload.message;
+            state.user = action.payload?.user;
+            state.token = action.payload?.token;
+        })
+        .addCase(getUser.rejected, (state, action) => {
             state.isLoading = false;
             state.status = action.payload.message;
         })

@@ -13,6 +13,7 @@ export default defineConfig({
       { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
       { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
       { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
+      { find: '@redux', replacement: path.resolve(__dirname, 'src/redux') },
     ],
 }
 })

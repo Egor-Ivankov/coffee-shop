@@ -4,6 +4,7 @@ import Products from './Products';
 import BecomeAPartner from './BecomeAPartner';
 import Enquiry from './Enquiry';
 import Login from './Login';
+import Profile from './Profile';
 
 
 export { 
@@ -12,5 +13,6 @@ export {
     Products,
     BecomeAPartner,
     Enquiry,
-    Login
+    Login,
+    Profile
 };

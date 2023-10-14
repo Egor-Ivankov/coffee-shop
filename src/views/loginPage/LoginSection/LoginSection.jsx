@@ -1,26 +1,21 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import './loginSection.scss'
 import { useDispatch } from 'react-redux';
-import { loginThunk } from '../../../redux/features/auth/authSlice';
+import { loginThunk } from '@redux/features/auth/authSlice'
 
 const LoginSection = () => {
+    
+const [username, setEmail] = useState('');
+const [password, setPassword] = useState('');
+const dispatch = useDispatch();
 
-    const [username, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const dispatch = useDispatch();
-
-    const handleSubmit = () => {
-        try {
-            dispatch(loginThunk({username, password}));
-        } catch (e) {
-            console.log(e);
-        }
+const handleSubmit = () => {
+    try {
+        dispatch(loginThunk({username, password}));
+    } catch (e) {
+        console.log(e);
     }
-
-    useEffect(() => {
-        
-    }, )
+}
 
   return (
     <section className='login-section'>
@@ -57,7 +52,7 @@ const LoginSection = () => {
                 </a>
             </div>
 
-            <button type='submit' className='login-section-form-button'>Log in</button>
+            <button onClick={() => handleSubmit()} type='submit' className='login-section-form-button'>Log in</button>
             <hr className='login-section-form-hr'/>
 
             <div className='login-section-form-register'>

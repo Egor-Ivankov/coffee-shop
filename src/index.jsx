@@ -13,9 +13,9 @@ import {
 	Enquiry,
 	Home,
 	Login,
-	Products
+	Products,
+	Profile
 } from './routes';
-
 
 const router = createBrowserRouter([
 	{
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
 	{
 	  path: "/login",
 	  element: <Login />,
+	},
+	{
+	  path: "/profile",
+	  element: <Profile />,
 	},
 	
 ]);
