@@ -1,18 +1,50 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './loginSection.scss'
+import { useDispatch } from 'react-redux';
+import { loginThunk } from '../../../redux/features/auth/authSlice';
 
 const LoginSection = () => {
+
+    const [username, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = () => {
+        try {
+            dispatch(loginThunk({username, password}));
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    useEffect(() => {
+        
+    }, )
+
   return (
     <section className='login-section'>
         <h1 className='login-section-heading'>Login</h1>
         <form className='login-section-form' onSubmit={e => e.preventDefault()}>
             <label className='login-section-form-email'>
                 <span className='login-section-form-email-span'>Email</span>
-                <input placeholder='Type your email' type='email' className='login-section-form-email-input' />
+                <input 
+                onChange={e => setEmail(e.target.value)}
+                value={username} 
+                placeholder='Type your email' 
+                type='text'
+                className='login-section-form-email-input' 
+                />
             </label>
             <label className='login-section-form-password'>
                 <span className='login-section-form-password-span'>Password</span>
-                <input placeholder='Type your password' type='password' className='login-section-form-password-input' />
+                <input
+                onChange={e => setPassword(e.target.value)}
+                value={password}
+                placeholder='Type your password'
+                type='password'
+                className='login-section-form-password-input'
+                />
             </label>
 
             <div className='login-section-form-forgot'>
@@ -20,7 +52,7 @@ const LoginSection = () => {
                     <input className="login-section-form-forgot-remember-checkbox" type="checkbox" />
                     <span className="login-section-form-forgot-remember-span">Remember me</span>
                 </label>
-                <a href='/forgot-password' className="login-section-form-forgot-password">
+                <a href='/' className="login-section-form-forgot-password">
                     Forgot Password?
                 </a>
             </div>
