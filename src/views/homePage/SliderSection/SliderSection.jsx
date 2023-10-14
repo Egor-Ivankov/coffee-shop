@@ -1,68 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import lines from '@assets/img/lines.png'
-import coffeeBag from '@assets/img/coffee-bag.png';
+import data from './sliders';
 import { BsArrowRightShort } from 'react-icons/bs';
 import { BsArrowLeftShort } from 'react-icons/bs';
-import { nanoid } from 'nanoid';
 import './sliderSection.scss';
 
 const SliderSection = () => {
-    const [items, setItems] = useState([]);
-    const [slide, setSlide] = useState(0);
+    const [sliders, setSliders] = useState(data);
+    const [slideIndex, setSlideIndex] = useState(0);
     
-    useEffect(() => {
-        setItems([
-            {   
-                image: coffeeBag, 
-                title: 'Sun coffee 1', 
-                price: 100, 
-                id: nanoid()
-            },
-            {
-                image: coffeeBag, 
-                title: 'Sun coffee 2', 
-                price: 200, 
-                id: nanoid()
-            },
-            {
-                image: coffeeBag, 
-                title: 'Sun coffee 3', 
-                price: 300, 
-                id: nanoid()
-            },
-        ]);
-    }, []);
-
     const renderItems = (arr) => {
-        return arr.map((item, index) => {
-            const {image, title, id} = item;
+        return arr.map((slide, index) => {
+            const {image, title, id, price} = slide;
 
             let position = ' nextSlide';
 
-            if (slide === index) {
+            if (slideIndex === index) {
                 position = ' activeSlide';
             }
 
-            if (slide === index - 1 || (index === 0 && slide === items.length - 1)) {
+            if (slideIndex === index - 1 || (index === 0 && slideIndex === sliders.length - 1)) {
                 position = ' lastSlide'
             }
 
             return  (
-                <img 
-                    className={`slider-section-coffee ${position}`} 
-                    src={image} 
-                    alt={title} 
-                    key={id}
-                />
+                <article className={`slider-section-container ${position}`}>
+                    <img 
+                        className={`slider-section-container-coffee`} 
+                        src={image} 
+                        alt={title} 
+                        key={id}
+                    />
+                    <p className='slider-section-container-name'>{title}</p>
+                    <p className='slider-section-container-price'>{price}$</p>
+                </article>
             );
         });
     }
 
-    const elements = renderItems(items);
+    const elements = renderItems(sliders);
 
     return (
         <section className='slider-section'>
-
             <div className='slider-section-information'>
                 <h2 className='slider-section-information-header'>Our products</h2>
                 <p className='slider-section-information-description'>
@@ -75,19 +54,15 @@ const SliderSection = () => {
 
             {elements}
 
-            <div className='slider-section-container'>
-                <p className='slider-section-container-name'>Sun coffee</p>
-                <p className='slider-section-container-price'>100$</p>
-                <div className='slider-section-container-buttons'>
-                    <BsArrowLeftShort 
-                        onClick={() => setItems(slide => slide - 1)}
-                        className='slider-section-container-buttons-item'
+            <div className='slider-section-buttons'>
+                <BsArrowLeftShort 
+                        onClick={() => setSlideIndex(slideIndex => slideIndex - 1)}
+                        className='slider-section-buttons-item'
                     />
-                    <BsArrowRightShort 
-                        onClick={() => setSlide(slide => slide + 1)}
-                        className='slider-section-container-buttons-item'
-                    />
-                </div>
+                <BsArrowRightShort 
+                    onClick={() => setSlideIndex(slideIndex => slideIndex + 1)}
+                    className='slider-section-buttons-item'
+                />
             </div>
 
         </section>
