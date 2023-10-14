@@ -1,17 +1,18 @@
 import React from 'react'
+import './loginSection.scss'
 
 const LoginSection = () => {
   return (
-    <div className='login-section'>
+    <section className='login-section'>
         <h1 className='login-section-heading'>Login</h1>
         <form className='login-section-form' onSubmit={e => e.preventDefault()}>
             <label className='login-section-form-email'>
                 <span className='login-section-form-email-span'>Email</span>
-                <input type='email' className='login-section-form-email-input' />
+                <input placeholder='Type your email' type='email' className='login-section-form-email-input' />
             </label>
             <label className='login-section-form-password'>
                 <span className='login-section-form-password-span'>Password</span>
-                <input type='password' className='login-section-form-password-input' />
+                <input placeholder='Type your password' type='password' className='login-section-form-password-input' />
             </label>
 
             <div className='login-section-form-forgot'>
@@ -25,8 +26,14 @@ const LoginSection = () => {
             </div>
 
             <button type='submit' className='login-section-form-button'>Log in</button>
+            <hr className='login-section-form-hr'/>
+
+            <div className='login-section-form-register'>
+                <p className='login-section-form-register-p'>Or</p>
+                <button className='login-section-form-register-button'>Create new account</button>
+            </div>
         </form>
-    </div>
+    </section>
   )
 }
 

@@ -1,13 +1,13 @@
 import React from 'react'
-import { NavBar } from '@components/layout';
-import { Footer } from '@components/layout';
-import { LoginSection } from '../views/loginPage';
+import { LoginSection, RegisterSection } from '../views/loginPage';
+import '@components/styles/index.scss'
 
 const Login = () => {
   return (
-    <>
+    <div className='login-page'>
       <LoginSection />
-    </>
+      <RegisterSection />
+    </div>
   )
 }
 
