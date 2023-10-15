@@ -1,0 +1,26 @@
+.products-item {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 100px;
+    align-items: center;
+
+    &-img {
+        width: 70%;
+        height: auto;
+    }
+    
+    &-description {
+        overflow: hidden;
+    }
+
+    &-price {
+        font-size: larger;
+        font-weight: bold;
+        align-self: end;
+    }
+}
