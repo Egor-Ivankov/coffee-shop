@@ -13,22 +13,21 @@ const RegisterSection = ({handleMoveBackground}) => {
       <h1 className='register-section-heading'>Sign Up</h1>
         <form className='register-section-form' onSubmit={e => e.preventDefault()}>
           <label className='register-section-form-firstname'>
-                <span className='register-section-form-email-span'>First name</span>
+                <span className='register-section-form-firstname-span'>First name</span>
                 <input 
-                onChange={e => setEmail(e.target.value)}
+                onChange={e => setFirstname(e.target.value)}
                 value={firstname} 
                 type='text'
-                className='register-section-form-email-input' 
+                className='register-section-form-firstname-input' 
                 />
             </label>
           <label className='register-section-form-lastname'>
-                <span className='register-section-form-email-span'>Name</span>
+                <span className='register-section-form-lastname-span'>Last Name</span>
                 <input 
-                onChange={e => setEmail(e.target.value)}
+                onChange={e => setLastname(e.target.value)}
                 value={lastname} 
-                placeholder='First name' 
                 type='text'
-                className='register-section-form-email-input' 
+                className='register-section-form-lastname-input' 
                 />
             </label>
             <label className='register-section-form-email'>
@@ -36,7 +35,6 @@ const RegisterSection = ({handleMoveBackground}) => {
                 <input 
                 onChange={e => setEmail(e.target.value)}
                 value={email} 
-                placeholder='Type your email' 
                 type='text'
                 className='register-section-form-email-input' 
                 />
@@ -46,10 +44,14 @@ const RegisterSection = ({handleMoveBackground}) => {
                 <input
                 onChange={e => setPassword(e.target.value)}
                 value={password}
-                placeholder='Type your password'
                 type='password'
                 className='register-section-form-password-input'
                 />
+            </label>
+
+            <label className="register-section-form-remember">
+                    <input className="register-section-form-remember-checkbox" type="checkbox" />
+                    <span className="register-section-form-remember-span">Remember me</span>
             </label>
 
             <button onClick={() => handleSubmit()} type='submit' className='register-section-form-button'>Create account</button>

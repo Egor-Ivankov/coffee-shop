@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './loginSection.scss'
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '@redux/features/auth/authSlice'
-import bgr from '@assets/img/login-back.jpg'
 
 const LoginSection = ({regBackground, handleMoveBackground}) => {
 
