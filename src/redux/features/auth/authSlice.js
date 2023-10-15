@@ -8,13 +8,27 @@ const initialState = {
     isLoading: false
 }
 
-export const loginThunk = createAsyncThunk('auth/loginUser', async ({username, password}) => {
+export const loginThunk = createAsyncThunk('auth/loginUser', async ({email, password}) => {
     try {
-        const { data } = await axios.post('/auth/login', { username, password })
+        const { data } = await axios.post('/auth/login', { email, password })
 
         if (data.token) {
             window.localStorage.setItem('token', data.token);
         }
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+export const registerThunk = createAsyncThunk('auth/registerUser', async ({firstname, lastname, email, password}) => {
+    try {
+        const { data } = await axios.post('/auth/register', {firstname, lastname, email, password})
+
+        if (data.token) {
+            window.localStorage.setItem('token', data.token);
+        }
+
         return data;
     } catch (error) {
         console.log(error);
@@ -60,6 +74,24 @@ export const authSlice = createSlice({
             state.status = action.payload.message;
         })
 
+        // Register User
+
+        .addCase(registerThunk.pending, (state) => {
+            state.isLoading = true;
+            state.status = null;
+        })
+        .addCase(registerThunk.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.status = action.payload.message;
+            state.user = action.payload.user;
+            state.token = action.payload.token;
+        })
+        .addCase(registerThunk.rejected, (state, action) => {
+            state.isLoading = false;
+            state.status = action.payload.message;
+        })
+
+        // Get User
         .addCase(getUser.pending, (state) => {
             state.isLoading = true;
             state.status = null;

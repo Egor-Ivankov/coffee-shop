@@ -15,13 +15,13 @@ const Profile = () => {
       dispatch(logout());
       window.localStorage.removeItem('token');
       toast("Вы вышли из системы!");
-      setTimeout(() => navigate('/'), 2000)
+      setTimeout(() => navigate('/'), 1000)
     }
   }
 
   return (
     <div>
-        <h1>Hello, {user ? user.username : '???'}</h1>
+        <h1>Hello, {user ? user.firstname : '???'}</h1>
         <button onClick={() => logoutHandler()}>Logout</button>
         <br />
         <br />

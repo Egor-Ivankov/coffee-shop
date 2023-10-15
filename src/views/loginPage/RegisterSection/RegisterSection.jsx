@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './registerSection.scss'
+import { useDispatch, useSelector } from 'react-redux';
+import { registerThunk } from '@redux/features/auth/authSlice';
 
 const RegisterSection = ({handleMoveBackground}) => {
 
@@ -7,6 +9,21 @@ const RegisterSection = ({handleMoveBackground}) => {
   const [password, setPassword] = useState('');
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
+
+  const dispatch = useDispatch();
+  
+  const handleSubmit = () => {
+    try {
+      dispatch(registerThunk({email, password, firstname, lastname}));
+      setEmail('');
+      setPassword('');
+      setFirstname('');
+      setLastname('');
+    } catch(error) {
+      console.log(error);
+    }
+    
+  }
 
   return (
     <div className='register-section'>
@@ -18,7 +35,7 @@ const RegisterSection = ({handleMoveBackground}) => {
                 onChange={e => setFirstname(e.target.value)}
                 value={firstname} 
                 type='text'
-                className='register-section-form-firstname-input' 
+                className='register-section-form-firstname-input'
                 />
             </label>
           <label className='register-section-form-lastname'>
@@ -27,7 +44,7 @@ const RegisterSection = ({handleMoveBackground}) => {
                 onChange={e => setLastname(e.target.value)}
                 value={lastname} 
                 type='text'
-                className='register-section-form-lastname-input' 
+                className='register-section-form-lastname-input'
                 />
             </label>
             <label className='register-section-form-email'>
@@ -35,8 +52,8 @@ const RegisterSection = ({handleMoveBackground}) => {
                 <input 
                 onChange={e => setEmail(e.target.value)}
                 value={email} 
-                type='text'
-                className='register-section-form-email-input' 
+                type='email'
+                className='register-section-form-email-input'
                 />
             </label>
             <label className='register-section-form-password'>

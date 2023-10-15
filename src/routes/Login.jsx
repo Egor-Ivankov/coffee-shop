@@ -14,11 +14,16 @@ const Login = () => {
   const navigate = useNavigate();
 
   const isAuth = useSelector(checkIsAuth);
-  const { status } = useSelector((state) => state.auth)
+  const {status} = useSelector((state) => state.auth)
+  console.log(status)
 
   useEffect(() => {
-      if (status) toast(status);
-      if (isAuth) navigate('/');
+      if (status !== 'unauthorized token') {
+        toast(status);
+      } 
+      if (isAuth) {
+        setTimeout(() => navigate('/'), 1000)
+      }
   }, [status, isAuth])
 
   const [regBackground, setRegBackground] = useState('login-page-background')

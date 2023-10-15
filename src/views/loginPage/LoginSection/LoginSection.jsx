@@ -5,13 +5,13 @@ import { loginThunk } from '@redux/features/auth/authSlice'
 
 const LoginSection = ({regBackground, handleMoveBackground}) => {
 
-    const [username, setEmail] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
 
     const handleSubmit = () => {
         try {
-            dispatch(loginThunk({username, password}));
+            dispatch(loginThunk({email, password}));
         } catch (e) {
             console.log(e);
         }
@@ -25,7 +25,7 @@ const LoginSection = ({regBackground, handleMoveBackground}) => {
                 <span className='login-section-form-email-span'>Email</span>
                 <input 
                 onChange={e => setEmail(e.target.value)}
-                value={username} 
+                value={email} 
                 placeholder='Type your email' 
                 type='text'
                 className='login-section-form-email-input' 
