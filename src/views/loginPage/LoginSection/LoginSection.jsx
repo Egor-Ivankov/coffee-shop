@@ -2,20 +2,21 @@ import React, { useState } from 'react'
 import './loginSection.scss'
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '@redux/features/auth/authSlice'
+import bgr from '@assets/img/login-back.jpg'
 
-const LoginSection = () => {
-    
-const [username, setEmail] = useState('');
-const [password, setPassword] = useState('');
-const dispatch = useDispatch();
+const LoginSection = ({regBackground, handleMoveBackground}) => {
 
-const handleSubmit = () => {
-    try {
-        dispatch(loginThunk({username, password}));
-    } catch (e) {
-        console.log(e);
+    const [username, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
+
+    const handleSubmit = () => {
+        try {
+            dispatch(loginThunk({username, password}));
+        } catch (e) {
+            console.log(e);
+        }
     }
-}
 
   return (
     <section className='login-section'>
@@ -57,7 +58,7 @@ const handleSubmit = () => {
 
             <div className='login-section-form-register'>
                 <p className='login-section-form-register-p'>Or</p>
-                <button className='login-section-form-register-button'>Create new account</button>
+                <button onClick={() => handleMoveBackground()} className='login-section-form-register-button'>Create new account</button>
             </div>
         </form>
     </section>

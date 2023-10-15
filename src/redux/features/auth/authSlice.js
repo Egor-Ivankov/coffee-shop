@@ -39,7 +39,7 @@ export const authSlice = createSlice({
             state.user = null;
             state.token = null;
             state.status = null;
-        }
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -79,4 +79,5 @@ export const authSlice = createSlice({
 
 export const checkIsAuth = (state) => Boolean(state.auth.token);
 
+export const { logout } = authSlice.actions;
 export default authSlice.reducer;
