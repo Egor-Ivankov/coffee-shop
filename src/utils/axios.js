@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://localhost:3002/api"
+    baseURL: "https://coffee-shop-api-9alx.onrender.com/api"
 });
 
 instance.interceptors.request.use(config => {
