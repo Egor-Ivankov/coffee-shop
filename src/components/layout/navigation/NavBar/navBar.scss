@@ -41,9 +41,10 @@
                 transition: opacity 0.1s ease-out;
                 opacity: 0.6;
             }
+
         }
 
-        &-item:not(:last-child)::before {
+        &-item:not(:nth-last-child(-n + 2))::before {
             content: '';
             position: absolute;
             left: 0; 
@@ -54,7 +55,7 @@
             transition: width .4s ease-out;
         }
 
-        &-item:hover:before {
+        &-item:not(:nth-last-child(-n + 2)):hover::before {
             width: 100%;
         }
 

@@ -6,3 +6,55 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.login-page {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  &-background {
+    left: 50%;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  &-background-movein {
+    @keyframes moveIn {
+      from {
+        left: 50%;
+      }
+
+      to {
+        left: 0%;
+      }
+    }
+    left: 0%;
+    animation-name: moveIn;
+    animation-duration: 1s;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+  }
+
+  &-background-moveout {
+    @keyframes moveOut {
+      from {
+        left: 0%;
+      }
+
+      to {
+        left: 50%;
+      }
+    }
+    left: 50%;
+    animation-name: moveOut;
+    animation-duration: 1s;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+  }
+}
