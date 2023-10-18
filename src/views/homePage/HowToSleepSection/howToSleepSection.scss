@@ -1,9 +1,10 @@
 .how-to-sleep {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin: 16% 30% 0  0;
+    margin: 200px auto 0 0;
+    width: 700px;
 
     &-container {
         margin-right: 2%;

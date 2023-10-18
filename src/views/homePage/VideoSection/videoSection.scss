@@ -1,6 +1,6 @@
 .video-section {
     width: 100%;
-    margin: 16% 0 10% 0;
+    margin: 200px 0 0 auto;
     display: flex;
     justify-content: center;
     position: relative;
@@ -20,7 +20,7 @@
 
 .video-section::before {
     content: "";
-    width: 15%;
+    width: 25%;
     height: 500px;
     position: absolute;
     top: -28%;

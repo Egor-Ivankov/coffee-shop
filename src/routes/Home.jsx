@@ -15,7 +15,8 @@ import {
 const Home = () => {
   return (
     <>
-    <NavBar/>
+	<NavBar/>
+	<div className='home-page'>
 		<CoffeeBagSection />
 		<BenefitsSection />
 		<CupCoffeeSection />
@@ -24,8 +25,9 @@ const Home = () => {
 		<SliderSection/>
 		<NewsletterSection />
 		<FooterSection />
-		<Footer />
-    </>
+	</div>
+	<Footer />
+	</>
   )
 }
 
