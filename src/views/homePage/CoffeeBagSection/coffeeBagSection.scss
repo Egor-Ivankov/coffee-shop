@@ -1,9 +1,8 @@
 .coffee-bag {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+    margin: 0 auto;
+    width: 100%;
     height: 50rem;
 
     &-section {
@@ -13,13 +12,13 @@
         align-items: center;
         width: 100%;
         height: 500px;
-        padding: 0 100px 0 100px ;
         margin-top: 50px;
     
         &-introducing {
             display: flex;
             flex-direction: column;
             justify-content: start;
+            width: 260px;
     
             &-par {
                 font-size: 30px;
@@ -37,16 +36,23 @@
         }
     
         &-image {
-            width: 350px;
-            height: 475px;
+            transform: translateX(-15px);
+            width: 400px;
+            height: auto;
         }
     
         &-stepped {
+            display: flex;
+            flex-direction: column;
+            width: 260px;
+
             &-kernels {
                 width: 200px;
+                margin-left: auto;
             }
 
             &-par {
+                margin-left: auto;
                 font-size: 40px;
                 font-weight: 700;
                 line-height: .9;
@@ -62,10 +68,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 3%;
-        margin-top: 5%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 40px;
+        margin: 30px auto;
         background-color: #febd97;
         border: none;
         color: white;
