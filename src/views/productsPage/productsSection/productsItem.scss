@@ -1,13 +1,22 @@
 .products-item {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    height: 300px;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 100px;
+    justify-content: space-between;
+    width: 30%;
+    height: 500px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 2%;
+    text-align: center;
     align-items: center;
+    margin-bottom: 5%;
+
+    &-title {
+        text-transform: uppercase;
+        font-weight: normal;
+        margin: 0 5px;
+        letter-spacing: 1px;
+        transform: scale(1, 0.9)
+    }
 
     &-img {
         width: 70%;
@@ -16,11 +25,31 @@
     
     &-description {
         overflow: hidden;
+        font-size: 16px;
+        margin: 0 5px;
+        letter-spacing: 1px;
+        transform: scale(1, 0.9)
     }
 
     &-price {
         font-size: larger;
         font-weight: bold;
-        align-self: end;
+    }
+
+    &-button {
+        font-size:medium;
+        letter-spacing: 1px;
+        transform: scale(1, 1);
+        width: 50%;
+        border: none;
+        padding: 5%;
+        background: linear-gradient(#ed3f3fab, #ee54549d);
+        border-radius: 40px;
+        cursor: pointer;
+        color: white;
+    }
+
+    &-strength {
+
     }
 }

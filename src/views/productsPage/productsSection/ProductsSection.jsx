@@ -14,6 +14,25 @@ const ProductsSection = ({products}) => {
             description={item.description}
             />
         ))}
+        {products.map(item => (
+            <ProductsItem
+            key={item._id}
+            title={item.title}
+            img={item.img}
+            price={item.price}
+            description={item.description}
+            />
+        ))}
+        {products.map(item => (
+            <ProductsItem
+            key={item._id}
+            title={item.title}
+            img={item.img}
+            price={item.price}
+            description={item.description}
+            />
+        ))}
+        
     </div>
   )
 }
