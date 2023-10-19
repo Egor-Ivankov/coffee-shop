@@ -1,7 +1,11 @@
 import axios from '../utils/axios';
-import React, {useEffect, useState} from 'react'
-import { ProductsSection, ProductsItem } from '../views/productsPage';
-import { Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import { NavBar, Footer } from '@components/layout';
+import { 
+  ProductsSection,
+  HeadingSection,
+  FilterSection
+} from '../views/productsPage';
 
 const Products = () => {
 
@@ -23,12 +27,15 @@ const Products = () => {
   },[])
 
   return (
-    <div className='products-page'>
-      <h1>Developing...</h1>
-      <Link to='/' ><h3>back to home</h3></Link>
-      <ProductsSection products={products}  />
-      
-    </div>
+    <>
+	<NavBar/>
+	<div className='products-page'>
+		<HeadingSection />
+    <FilterSection products={products} />
+    <ProductsSection products={products} />
+	</div>
+	<Footer />
+	</>
   )
 }
 

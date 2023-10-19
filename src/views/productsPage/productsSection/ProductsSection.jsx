@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProductsItem } from '../'
+import { ProductsItem } from '..'
 import './productsSection.scss'
 
 const ProductsSection = ({products}) => {
