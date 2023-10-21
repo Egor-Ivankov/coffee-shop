@@ -1,8 +1,9 @@
 .cup-coffee-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin-top: 3%;
+    justify-content: space-between;
+    margin-top: 5%;
+    align-items: center;
 
     &-cup {
         margin-right: 12%;

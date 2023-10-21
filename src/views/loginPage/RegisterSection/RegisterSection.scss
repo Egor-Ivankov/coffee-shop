@@ -1,0 +1,166 @@
+.register-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    padding: 10%;
+    height: 100vh;
+    position: relative;
+
+    &-heading {
+        font-size: 50px;
+        margin-bottom: 20px;
+        margin-right: auto;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 40px;
+        border: 2px solid rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+
+        &-firstname {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            
+            &-span {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            &-input {
+                outline: none;
+                width: 100%;
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 2px solid rgba(0, 0, 0, 0.05);
+                border-radius: 6px;
+            }
+        }
+
+        &-lastname {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            
+            &-span {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            &-input {
+                outline: none;
+                width: 100%;
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 2px solid rgba(0, 0, 0, 0.05);
+                border-radius: 6px;
+            }
+        }
+
+        &-email {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            
+            &-span {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            &-input {
+                outline: none;
+                width: 100%;
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 2px solid rgba(0, 0, 0, 0.05);
+                border-radius: 6px;
+            }
+        }
+
+        &-password {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            
+            &-span {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            &-input {
+                outline: none;
+                width: 100%;
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 2px solid rgba(0, 0, 0, 0.05);
+                border-radius: 6px;
+            }
+        }
+
+        &-remember {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            &-checkbox {
+                border: 1px solid black;
+                border-radius: 10px;
+                margin-right: 5px;
+            }
+
+            &-checkbox:checked {
+                background-color: #febd97;
+            }
+        }
+
+        &-button {
+            width: 100%;
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #febd97;
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+
+        &-hr {
+            height: 1px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
+        }
+
+        &-register {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &-p {
+                margin-bottom: 15px;
+            }
+
+            &-button {
+                width: 100%;
+                height: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: none;
+                border-radius: 6px;
+                background-color: #e4d5cd;
+                cursor: pointer;
+            }
+        }
+    }
+}

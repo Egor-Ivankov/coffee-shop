@@ -1,11 +1,13 @@
 .top-nav-bar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 0 auto;
+    width: 1260px;
 
     &-logo {
         width: 150px;
-        margin: 10px 10% 0 10%;
+        margin: 10px 400px 10px 0;
     }
 
     &-list {
@@ -14,8 +16,8 @@
         justify-content: space-between;
         align-items: center;
         list-style: none;
-        width: 40%;
-        margin-right: 10%;
+        width: 700px;
+        margin-right: 0;
         
         a {
             text-decoration: none;
@@ -41,9 +43,10 @@
                 transition: opacity 0.1s ease-out;
                 opacity: 0.6;
             }
+
         }
 
-        &-item:not(:last-child)::before {
+        &-item:not(:nth-last-child(-n + 2))::before {
             content: '';
             position: absolute;
             left: 0; 
@@ -54,7 +57,7 @@
             transition: width .4s ease-out;
         }
 
-        &-item:hover:before {
+        &-item:not(:nth-last-child(-n + 2)):hover::before {
             width: 100%;
         }
 
