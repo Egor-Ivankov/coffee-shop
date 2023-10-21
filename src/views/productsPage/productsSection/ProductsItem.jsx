@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import './productsItem.scss'
+import parse from 'html-react-parser';
 
-const ProductsItem = ({img, price, description, title}) => {
+const ProductsItem = ({img, price, description, title, flavours, strength}) => {
+
+  console.log(flavours.length)
+
   return (
     <div className='products-item'>
         <img className='products-item-img' src={img} />
-        <h3 className='products-item-title'>{title}</h3>
-        <p className='products-item-description'>{description}</p>
+        <h3 className='products-item-title'>{title.toString()}</h3>
+        <p className='products-item-flavours'>{flavours.map(item => <span> {item.name + ' • '} </span>)}</p>
         <p className='products-item-price'>From $ {price}</p>
         <button className='products-item-button'>Quick view</button>
         <div className='products-item-strength'>
-          <strong>STRENGTH: </strong>
-          {4}
+          <strong>STRENGTH: {strength}</strong>
         </div>
     </div>
   )
