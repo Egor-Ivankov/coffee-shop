@@ -9,6 +9,17 @@ const SliderSection = () => {
     const [sliders, setSliders] = useState(data);
     const [slideIndex, setSlideIndex] = useState(0);
     
+    useEffect(() => {
+        const lastIndex = sliders.length - 1;
+        
+        if (slideIndex < 0) {
+            setSlideIndex(lastIndex);
+        } else if (slideIndex > lastIndex) {
+            setSlideIndex(0);
+        }
+
+    }, [sliders, slideIndex]);
+
     const renderItems = (arr) => {
         return arr.map((slide, index) => {
             const {image, title, id, price} = slide;

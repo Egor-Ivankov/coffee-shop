@@ -54,7 +54,7 @@
         max-width: 100%;
         height: 100%;
         opacity: 0;
-        transition: var(--transition);
+        transition: all .3s linear;
         
         &-name {
             font-family: 'Inria Sans', sans-serif;
