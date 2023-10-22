@@ -3,7 +3,7 @@ import './filterSection.scss';
 import {BsCupHot} from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { getActiveRegionFilter } from '../../../redux/features/products-filters/regionFilterSlice';
-
+import { getActiveFlavourFilter } from '../../../redux/features/products-filters/flavourFilterSlice'; 
 
 const FilterSection = ({products}) => {
 	const dispatch = useDispatch();
@@ -25,13 +25,13 @@ const FilterSection = ({products}) => {
 
 			<p className='filter-section-p'>with notes of</p>
 
-			<select className='filter-section-select'>
-			<option className='filter-section-select-option'>All flavour groups</option>
-			<option className='filter-section-select-option'>Chocolate & Caramels</option>
-			<option className='filter-section-select-option'>Citrus & Floral</option>
-			<option className='filter-section-select-option'>Fruit & Berry</option>
-			<option className='filter-section-select-option'>Nut & Spice</option>
-			<option className='filter-section-select-option'>Strong & Dark</option>
+			<select className='filter-section-select' onChange={(e) => dispatch(getActiveFlavourFilter(e.target.value))}>
+			<option className='filter-section-select-option' value='all'>All flavour groups</option>
+			<option className='filter-section-select-option' value='chocolate'>Chocolate & Caramels</option>
+			<option className='filter-section-select-option' value='citrus'>Citrus & Floral</option>
+			<option className='filter-section-select-option' value='fruit'>Fruit & Berry</option>
+			<option className='filter-section-select-option' value='nut'>Nut & Spice</option>
+			<option className='filter-section-select-option' value='strong'>Strong & Dark</option>
 			</select>
 
 			<p className='filter-section-p'>with strength</p>
