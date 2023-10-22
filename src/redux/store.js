@@ -1,13 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from './features/auth/authSlice';
-import regionFilterSlice from "./features/products-filters/regionFilterSlice";
-import flavourFilterSlice from "./features/products-filters/flavourFilterSlice";
+import productsFiltersSlice from "./features/products-filters/productsFiltersSlice";
 
 export const store = configureStore({
     reducer: {
         auth: authSlice,
-        regionFilter: regionFilterSlice,
-        flavourFilter: flavourFilterSlice,
+        productsFilter: productsFiltersSlice,
     },
     devTools: process.env.NODE_ENV !== 'production'
 });

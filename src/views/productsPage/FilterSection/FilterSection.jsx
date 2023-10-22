@@ -2,12 +2,14 @@ import React from 'react';
 import './filterSection.scss';
 import {BsCupHot} from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-import { getActiveRegionFilter } from '../../../redux/features/products-filters/regionFilterSlice';
-import { getActiveFlavourFilter } from '../../../redux/features/products-filters/flavourFilterSlice'; 
+import {
+	getActiveRegionFilter,
+	getActiveFlavourFilter, 
+	getActiveStrengthsFilter 
+} from '../../../redux/features/products-filters/productsFiltersSlice'; 
 
 const FilterSection = ({products}) => {
 	const dispatch = useDispatch();
-
 
 	return (
 		<section className='filter-section'>
@@ -36,11 +38,11 @@ const FilterSection = ({products}) => {
 
 			<p className='filter-section-p'>with strength</p>
 			
-			<select className='filter-section-select'>
-			<option className='filter-section-select-option'>All strengths</option>
-			<option className='filter-section-select-option'>3</option>
-			<option className='filter-section-select-option'>4</option>
-			<option className='filter-section-select-option'>5</option>
+			<select className='filter-section-select' onChange={(e) => dispatch(getActiveStrengthsFilter(e.target.value))}>
+			<option className='filter-section-select-option' value='all'>All strengths</option>
+			<option className='filter-section-select-option' value='3'>3</option>
+			<option className='filter-section-select-option' value='4'>4</option>
+			<option className='filter-section-select-option' value='5'>5</option>
 			</select>
 		</section>
 	)
