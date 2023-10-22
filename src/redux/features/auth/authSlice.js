@@ -8,7 +8,7 @@ const initialState = {
     isLoading: false
 }
 
-export const loginThunk = createAsyncThunk('auth/loginUser', async ({email, password}) => {
+export const loginThunk = createAsyncThunk('auth/loginUser', async ({ email, password }) => {
     try {
         const { data } = await axios.post('/auth/login', { email, password })
 
@@ -21,9 +21,9 @@ export const loginThunk = createAsyncThunk('auth/loginUser', async ({email, pass
     }
 })
 
-export const registerThunk = createAsyncThunk('auth/registerUser', async ({firstname, lastname, email, password}) => {
+export const registerThunk = createAsyncThunk('auth/registerUser', async ({ firstname, lastname, email, password }) => {
     try {
-        const { data } = await axios.post('/auth/register', {firstname, lastname, email, password})
+        const { data } = await axios.post('/auth/register', { firstname, lastname, email, password })
 
         if (data.token) {
             window.localStorage.setItem('token', data.token);
@@ -36,12 +36,12 @@ export const registerThunk = createAsyncThunk('auth/registerUser', async ({first
 })
 
 export const getUser = createAsyncThunk('auth/getUser', async () => {
-    try {
-        const { data } = await axios.get('auth/me')
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
+    // try {
+    //     const { data } = await axios.get('auth/me')
+    //     return data;
+    // } catch (error) {
+    //     console.log(error);
+    // }
 })
 
 export const authSlice = createSlice({
@@ -58,54 +58,54 @@ export const authSlice = createSlice({
     extraReducers: (builder) => {
         builder
 
-        // Login user
-        .addCase(loginThunk.pending, (state) => {
-            state.isLoading = true;
-            state.status = null;
-        })
-        .addCase(loginThunk.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.status = action.payload.message;
-            state.user = action.payload.user;
-            state.token = action.payload.token;
-        })
-        .addCase(loginThunk.rejected, (state, action) => {
-            state.isLoading = false;
-            state.status = action.payload.message;
-        })
+            // Login user
+            .addCase(loginThunk.pending, (state) => {
+                state.isLoading = true;
+                state.status = null;
+            })
+            .addCase(loginThunk.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.status = action.payload.message;
+                state.user = action.payload.user;
+                state.token = action.payload.token;
+            })
+            .addCase(loginThunk.rejected, (state, action) => {
+                state.isLoading = false;
+                state.status = action.payload.message;
+            })
 
-        // Register User
+            // Register User
 
-        .addCase(registerThunk.pending, (state) => {
-            state.isLoading = true;
-            state.status = null;
-        })
-        .addCase(registerThunk.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.status = action.payload.message;
-            state.user = action.payload.user;
-            state.token = action.payload.token;
-        })
-        .addCase(registerThunk.rejected, (state, action) => {
-            state.isLoading = false;
-            state.status = action.payload.message;
-        })
+            .addCase(registerThunk.pending, (state) => {
+                state.isLoading = true;
+                state.status = null;
+            })
+            .addCase(registerThunk.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.status = action.payload.message;
+                state.user = action.payload.user;
+                state.token = action.payload.token;
+            })
+            .addCase(registerThunk.rejected, (state, action) => {
+                state.isLoading = false;
+                state.status = action.payload.message;
+            })
 
-        // Get User
-        .addCase(getUser.pending, (state) => {
-            state.isLoading = true;
-            state.status = null;
-        })
-        .addCase(getUser.fulfilled, (state, action) => {
-            state.isLoading = false;
-            state.status = action.payload.message;
-            state.user = action.payload?.user;
-            state.token = action.payload?.token;
-        })
-        .addCase(getUser.rejected, (state, action) => {
-            state.isLoading = false;
-            state.status = action.payload.message;
-        })
+            // Get User
+            .addCase(getUser.pending, (state) => {
+                state.isLoading = true;
+                state.status = null;
+            })
+            .addCase(getUser.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.status = action.payload.message;
+                state.user = action.payload?.user;
+                state.token = action.payload?.token;
+            })
+            .addCase(getUser.rejected, (state, action) => {
+                state.isLoading = false;
+                state.status = action.payload.message;
+            })
     }
 })
 
