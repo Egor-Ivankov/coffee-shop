@@ -8,7 +8,7 @@ const ProductsItem = ({img, price, description, title, flavours, strength}) => {
     <div className='products-item'>
         <img className='products-item-img' src={img} />
         <h3 className='products-item-title'>{title.toString()}</h3>
-        <p className='products-item-flavours'>{flavours.map(item => <span> {item.name + ' • '} </span>)}</p>
+        <p className='products-item-flavours'>{flavours.map((item, index) => <span key={index}> {item.name + ' • '} </span>)}</p>
         <p className='products-item-price'>From $ {price}</p>
         <button className='products-item-button'>Quick view</button>
         <div className='products-item-strength'>

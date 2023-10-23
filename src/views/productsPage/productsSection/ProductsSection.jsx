@@ -40,9 +40,8 @@ const ProductsSection = ({products}) => {
         } else {
             return filteredStrengthProducts.map(product => {
                 return (
-                    <CSSTransition timeout={400} classNames="product">
+                    <CSSTransition timeout={400} classNames="product" key={product._id}>
                         <ProductsItem
-                            key={product._id}
                             title={product.title}
                             img={product.img}
                             price={product.price}
