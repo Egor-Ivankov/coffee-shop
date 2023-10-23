@@ -4,8 +4,6 @@ import parse from 'html-react-parser';
 
 const ProductsItem = ({img, price, description, title, flavours, strength}) => {
 
-  console.log(flavours.length)
-
   return (
     <div className='products-item'>
         <img className='products-item-img' src={img} />
