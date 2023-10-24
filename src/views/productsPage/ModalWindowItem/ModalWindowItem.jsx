@@ -22,7 +22,7 @@ const ModalWindowItem = ({img, price, description, title, flavours, strength, se
   strength5;
 
   return (
-    <div className='modal-window'>
+    <div onClick={(e) => e.target.id === 'modalWindow' && setModal(false)} id='modalWindow' className='modal-window' >
         <div className='modal-window-container'>
             <AiOutlineClose className='modal-window-container-close-button' onClick={() => setModal(false)} />
             <h1 className='modal-window-container-title'>{title}</h1>

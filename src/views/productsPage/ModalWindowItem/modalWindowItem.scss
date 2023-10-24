@@ -29,6 +29,7 @@
     overflow: none;
     animation-name: open;
     animation-duration: 0.5s;
+    cursor: pointer;
     
     &-container {
         animation-name: margin;
@@ -41,6 +42,8 @@
         margin: 100px auto;
         background-color: white;
         padding: 50px;
+        cursor: auto;
+        
 
         &-close-button {
             cursor: pointer;

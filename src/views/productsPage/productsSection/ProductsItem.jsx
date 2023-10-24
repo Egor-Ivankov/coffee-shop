@@ -38,7 +38,10 @@ const ProductsItem = ({img, price, description, title, flavours, strength, id}) 
         <h3 className='products-item-title'>{title.toString()}</h3>
         <p className='products-item-flavours'>{renderFlavours}</p>
         <p className='products-item-price'>From $ {price}</p>
-        <button onClick={() => setModal(true)} className='products-item-button'>Quick view</button>
+        <button onClick={() => {
+          setModal(true);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          }} className='products-item-button'>Quick view</button>
         <div className='products-item-strength'>
           <strong className='products-item-strength-p'>STRENGTH: </strong>
           <img 
