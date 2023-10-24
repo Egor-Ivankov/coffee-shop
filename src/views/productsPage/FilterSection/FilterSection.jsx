@@ -18,11 +18,9 @@ const FilterSection = ({products}) => {
 
 			<select className='filter-section-select' onChange={(e) => dispatch(getActiveRegionFilter(e.target.value))}>
 			<option className='filter-section-select-option' value='all'>All regions</option>
-			<option className='filter-section-select-option' value='africa'>Africa</option>
-			<option className='filter-section-select-option' value='salvador'>El Salvador Black Honey</option>
-			<option className='filter-section-select-option' value='indonesia'>Indonesia & Asia</option>
-			<option className='filter-section-select-option' value='new'>New Coffee</option>
-			<option className='filter-section-select-option' value='amerika'>South America</option>
+			<option className='filter-section-select-option' value='brazil'>Brazil</option>
+			<option className='filter-section-select-option' value='burundi'>Burundi</option>
+			<option className='filter-section-select-option' value='guatemala'>Guatemala</option>
 			</select>
 
 			<p className='filter-section-p'>with notes of</p>

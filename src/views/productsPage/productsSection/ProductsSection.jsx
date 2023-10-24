@@ -1,26 +1,69 @@
-import React from 'react'
-import { ProductsItem } from '..'
-import './productsSection.scss'
+import React from 'react';
+import { ProductsItem } from '..';
+import './productsSection.scss';
+import { useSelector } from 'react-redux';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const ProductsSection = ({products}) => {
-  return (
-    <div className='products-section'>
-        {products.map(item => (
-            <ProductsItem
-            key={item._id}
-            id={item._id}
-            title={item.title}
-            img={item.img}
-            price={item.price}
-            description={item.description}
-            flavours={item.flavours}
-            region={item.region}
-            environment={item.environment}
-            strength={item.strength}
-            />
-        ))}
-    </div>
-  )
+
+    const regions = useSelector(state => state.productsFilter.regions);
+    const flavour = useSelector(state => state.productsFilter.flavour);
+    const strength = useSelector(state => state.productsFilter.strength);
+
+
+    const filteredRegion = (products, filter) => {
+        if (filter === 'all') {
+        return products;
+        } else {
+        return products.filter(product => product.region.name.toLowerCase() === filter);
+        }
+    }
+
+    const filteredStrength = (products, filter) => {
+        if (filter === 'all') {
+        return products;
+        } else {
+        return products.filter(product => product.strength == filter);
+        }
+    }
+
+    const renderFilteredProducts = (products) => {
+        const filteredRegionProducts = filteredRegion(products, regions);
+        const filteredStrengthProducts = filteredStrength(filteredRegionProducts, strength);
+
+        if (filteredStrengthProducts.length === 0) {
+            return (
+                <CSSTransition timeout={400} classNames='product'>
+                    <div className='empty'>Coffee list is empty</div>
+                </CSSTransition>
+            )
+        } else {
+            return filteredStrengthProducts.map(product => {
+                return (
+                    <CSSTransition timeout={400} classNames="product" key={product._id}>
+                        <ProductsItem
+                            title={product.title}
+                            img={product.img}
+                            price={product.price}
+                            description={product.description}
+                            flavours={product.flavours}
+                            region={product.region}
+                            environment={product.environment}
+                            strength={product.strength}
+                        />
+                    </CSSTransition>
+                )
+            });
+        }
+    }
+
+    const allProducts = renderFilteredProducts(products);
+
+    return (
+        <TransitionGroup component='div' className='products-section'>
+            {allProducts} 
+        </TransitionGroup>
+    )
 }
 
 export default ProductsSection
