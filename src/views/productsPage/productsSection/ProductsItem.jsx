@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
-import './productsItem.scss'
-import strength5 from '@assets/img/strength5.png'
-import strength4 from '@assets/img/strength4.png'
-import strength3 from '@assets/img/strength3.png'
-import ModalWindowItem from '../ModalWindowItem/ModalWindowItem'
+import React, { useState } from 'react';
+import './productsItem.scss';
+import strength5 from '@assets/img/strength5.png';
+import strength4 from '@assets/img/strength4.png';
+import strength3 from '@assets/img/strength3.png';
+import ModalWindowItem from '../ModalWindowItem/ModalWindowItem';
 
 const ProductsItem = ({img, price, description, title, flavours, strength, id}) => {
-
 
   /* Переделать key */
   const renderFlavours = flavours.map(item => {
@@ -55,6 +54,7 @@ const ProductsItem = ({img, price, description, title, flavours, strength, id}) 
             description={description}
             flavours={flavours}
             strength={strength}
+            setModal={setModal}
      />
     }
     </>
