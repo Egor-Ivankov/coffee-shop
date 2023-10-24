@@ -47,6 +47,7 @@
         border-radius: 40px;
         cursor: pointer;
         color: white;
+        overflow: hidden;
     }
 
     &-button::before {
@@ -54,23 +55,24 @@
         position: absolute;
         top: 1px;
         left: 0;
-        width: 1.5em;
+        width: 3.5em;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.6);
-        transform: translateX(-4em) skewX(-45deg);
-        overflow: hidden;
+        transform: translateX(-6em);
+        background-color: rgba(253, 202, 202, 0.36);
+        box-shadow: 0 0 20px 25px rgba(255, 255, 255, 0.165);
+        border-radius: 10px;
     }
     
     &-button:hover::before {
-        animation: move-light .8s;
+        animation: move-light 1.1s;
     }
     
     @keyframes move-light {
         from {
-            transform: translateX(-50px) skewX(-45deg);
+            transform: translateX(250px);
         }
         to {
-            transform: translateX(170px) skewX(-45deg);
+            transform: translateX(-150px);
         }
     }
 
