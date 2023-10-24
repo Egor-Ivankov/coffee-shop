@@ -122,6 +122,7 @@
                 &-label {
                     display: flex;
                     flex-direction: column;
+
                     h2{
                         text-transform: uppercase;
                         letter-spacing: 1px;
@@ -182,6 +183,18 @@
                         }
                         to {
                             transform: translateX(-120px);
+                        }
+                    }
+
+                    &-circles {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        &-option {
+                            @extend .modal-window-container-inside-form-label-button;
+                            width: 25%;
+                            height: 40px;
                         }
                     }
                 }

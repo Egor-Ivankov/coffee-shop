@@ -40,7 +40,7 @@ const ProductsItem = ({img, price, description, title, flavours, strength, id}) 
         <p className='products-item-price'>From $ {price}</p>
         <button onClick={() => {
           setModal(true);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 50, behavior: 'smooth' });
           }} className='products-item-button'>Quick view</button>
         <div className='products-item-strength'>
           <strong className='products-item-strength-p'>STRENGTH: </strong>
