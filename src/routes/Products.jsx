@@ -4,7 +4,7 @@ import { NavBar, Footer } from '@components/layout';
 import { 
   ProductsSection,
   HeadingSection,
-  FilterSection
+  FilterSection,
 } from '../views/productsPage';
 
 const Products = () => {

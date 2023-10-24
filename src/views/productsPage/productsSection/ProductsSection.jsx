@@ -8,6 +8,7 @@ const ProductsSection = ({products}) => {
         {products.map(item => (
             <ProductsItem
             key={item._id}
+            id={item._id}
             title={item.title}
             img={item.img}
             price={item.price}
