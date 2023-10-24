@@ -49,4 +49,13 @@
         color: white;
     }
 
+    &-strength {
+        display: flex;
+        align-items: center;
+        &-img {
+            margin-left: 5px;
+            width: auto;
+            height: 40px;
+        }
+    }
 }

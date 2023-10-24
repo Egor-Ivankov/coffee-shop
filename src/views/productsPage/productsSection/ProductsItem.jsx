@@ -14,6 +14,18 @@ const ProductsItem = ({img, price, description, title, flavours, strength}) => {
     }
   }
   )
+  const renderImg = 
+  strength === 3 
+  ? 
+  strength3   
+  : 
+  strength === 4 
+  ? 
+  strength4 
+  : 
+  strength === 5 
+  ?? 
+  strength5;
 
   return (
     <div className='products-item'>
@@ -23,7 +35,10 @@ const ProductsItem = ({img, price, description, title, flavours, strength}) => {
         <p className='products-item-price'>From $ {price}</p>
         <button className='products-item-button'>Quick view</button>
         <div className='products-item-strength'>
-          <strong>STRENGTH: {strength}</strong>
+          <strong className='products-item-strength-p'>STRENGTH: </strong>
+          <img 
+          className='products-item-strength-img' 
+          src={renderImg} />
         </div>
     </div>
   )
