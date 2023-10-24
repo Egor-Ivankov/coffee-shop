@@ -37,9 +37,9 @@
     }
 
     &-button {
+        position: relative;
         font-size:medium;
         letter-spacing: 1px;
-        transform: scale(1, 1);
         width: 50%;
         border: none;
         padding: 5%;
@@ -47,6 +47,31 @@
         border-radius: 40px;
         cursor: pointer;
         color: white;
+    }
+
+    &-button::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 1.5em;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: translateX(-4em) skewX(-45deg);
+        overflow: hidden;
+    }
+    
+    &-button:hover::before {
+        animation: move-light .8s;
+    }
+    
+    @keyframes move-light {
+        from {
+            transform: translateX(-50px) skewX(-45deg);
+        }
+        to {
+            transform: translateX(170px) skewX(-45deg);
+        }
     }
 
     &-strength {
