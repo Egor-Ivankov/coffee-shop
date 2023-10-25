@@ -36,21 +36,21 @@ const ModalWindowItem = ({img, price, description, title, flavours, strength, se
                 <img src={img} className='modal-window-container-inside-img'/>
                 <form onSubmit={e => e.preventDefault()} className='modal-window-container-inside-form'>
                     <label className='modal-window-container-inside-form-label'>
-                        <h2>Quantity</h2>
+                        <h2 className='modal-window-container-inside-form-label-title'>Quantity</h2>
                         <input className='modal-window-container-inside-form-label-input' type='number' />
                     </label>
 
-                    <label className='modal-window-container-inside-form-label'>
-                        <h2>Bag Size</h2>
+                    <div className='modal-window-container-inside-form-label'>
+                        <h2 className='modal-window-container-inside-form-label-title'>Bag Size</h2>
                         <div className='modal-window-container-inside-form-label-circles'>
                             <button className='modal-window-container-inside-form-label-circles-option'>200g</button>
                             <button className='modal-window-container-inside-form-label-circles-option'>500g</button>
                             <button className='modal-window-container-inside-form-label-circles-option'>1kg</button>
                         </div>
-                    </label>
+                    </div>
 
                     <label className='modal-window-container-inside-form-label'>
-                        <h2>Please choose your grind</h2>
+                        <h2 className='modal-window-container-inside-form-label-title'>Please choose your grind</h2>
                         <select className='modal-window-container-inside-form-label-select'>
                             <option className='modal-window-container-inside-form-label-select-option'>Wholebean</option>
                             <option className='modal-window-container-inside-form-label-select-option'>Cafetiere</option>
