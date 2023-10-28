@@ -24,14 +24,14 @@ const SliderSection = () => {
         return arr.map((slide, index) => {
             const {image, title, id, price} = slide;
 
-            let position = ' nextSlide';
+            let position = ' lastSlide';
 
             if (slideIndex === index) {
                 position = ' activeSlide';
             }
 
             if (slideIndex === index - 1 || (index === 0 && slideIndex === sliders.length - 1)) {
-                position = ' lastSlide'
+                position = ' nextSlide'
             }
 
             return  (
