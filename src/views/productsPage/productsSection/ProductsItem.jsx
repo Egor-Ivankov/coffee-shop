@@ -58,6 +58,7 @@ const ProductsItem = ({img, price, description, title, flavours, strength, id}) 
             flavours={flavours}
             strength={strength}
             setModal={setModal}
+            modal={modal}
      />
     }
     </>

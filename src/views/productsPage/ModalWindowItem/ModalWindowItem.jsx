@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './modalWindowItem.scss';
 import strength5 from '@assets/img/strength5.png';
 import strength4 from '@assets/img/strength4.png';
@@ -6,7 +6,7 @@ import strength3 from '@assets/img/strength3.png';
 import parse from 'html-react-parser';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const ModalWindowItem = ({img, price, description, title, flavours, strength, setModal}) => {
+const ModalWindowItem = ({img, price, description, title, flavours, strength, setModal, modal}) => {
 
   const renderImg = 
   strength === 3 
@@ -21,8 +21,23 @@ const ModalWindowItem = ({img, price, description, title, flavours, strength, se
   ?? 
   strength5;
 
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    if (closing) {
+      const timer = setTimeout(() => {
+        setModal(false);
+      }, 400); // Задержка должна соответствовать времени анимации
+      return () => clearTimeout(timer);
+    }
+  }, [closing, setModal]);
+
+  const closeModal = () => {
+    setClosing(true);
+  };
+
   return (
-    <div onClick={(e) => e.target.id === 'modalWindow' && setModal(false)} id='modalWindow' className='modal-window' >
+    <div onClick={(e) => e.target.id === 'modalWindow' && closeModal()} id='modalWindow' className={`modal-window ${closing ? 'closed' : ''}`} >
         <div className='modal-window-container'>
             <AiOutlineClose className='modal-window-container-close-button' onClick={() => setModal(false)} />
             <h1 className='modal-window-container-title'>{title}</h1>
