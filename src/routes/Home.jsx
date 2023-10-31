@@ -1,6 +1,5 @@
 import React from 'react'
-import { NavBar } from '@components/layout';
-import { Footer } from '@components/layout';
+import { NavBar, Footer } from '@components/layout';
 import { 
 	CoffeeBagSection, 
 	BenefitsSection, 

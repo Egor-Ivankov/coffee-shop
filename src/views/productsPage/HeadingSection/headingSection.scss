@@ -1,0 +1,27 @@
+.heading-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 520px;
+    margin: 5% auto 1% auto;
+    text-align: center;
+    
+    &-h {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: 1px;
+        font-family: 'Inria Sans', sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 5%;
+        transform: scale(1, 0.9)
+    }
+
+    &-p {
+        font-size: 16px;
+        align-items: center;
+        letter-spacing: 1px;
+        line-height: 1.4;
+        margin-bottom: 5%;
+        transform: scale(1, 0.9)
+    }
+}
