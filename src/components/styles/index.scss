@@ -1,5 +1,6 @@
 :root {
   font-family: 'Sofia Sans Condensed', sans-serif;
+  position: relative;
 }
 * {
   margin: 0;
@@ -7,7 +8,20 @@
   box-sizing: border-box;
 }
 
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .home-page {
+  display: flex;
+  flex-direction: column;
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.products-page {
   display: flex;
   flex-direction: column;
   width: 1260px;
